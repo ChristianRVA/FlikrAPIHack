@@ -2,11 +2,10 @@ $(document).ready(function() {
   
 
  $('form').submit(function (evt) {
-    // highlight the button
-    // not AJAX, just cool looking
+    
     evt.preventDefault();
 
-    // the AJAX part
+    //flicker ajax
     var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     var searchText = $('#search').val();
     var flickrOptions = {
