@@ -1,17 +1,16 @@
 $(document).ready(function() {
+  
 
-
- $('button').click(function () {
+ $('form').submit(function (evt) {
     // highlight the button
     // not AJAX, just cool looking
-    $("button").removeClass("selected");
-    $(this).addClass("selected");
+    evt.preventDefault();
 
     // the AJAX part
     var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-    var animal = $(this).text();
+    var searchText = $('#search').val();
     var flickrOptions = {
-      tags: animal,
+      tags: searchText,
       format: "json"
     };
     function displayPhotos(data) {
